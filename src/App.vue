@@ -1,33 +1,17 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <b-navbar toggleable="md" type="light" variant="white">
       <b-link class="navbar-brand" to="/">Minimal</b-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-        aria-controls="navbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <b-link class="nav-link" to="/">Home</b-link>
-          </li>
-          <li class="nav-item">
-            <b-link class="nav-link" to="/products">Products</b-link>
-          </li>
-          <li class="nav-item">
-            <b-link class="nav-link" to="/cart">Cart</b-link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <b-collapse is-nav id="nav_collapse">
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/">Home</b-nav-item>
+          <b-nav-item to="/products">Products</b-nav-item>
+          <b-nav-item to="/cart">Cart</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
     <router-view/>
   </div>
 </template>
