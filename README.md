@@ -1,4 +1,4 @@
-# reins
+# Reins
 
 ## Project setup
 ```
