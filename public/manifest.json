@@ -1,6 +1,6 @@
 {
-  "name": "reins-vue",
-  "short_name": "reins-vue",
+  "name": "Reins",
+  "short_name": "Reins",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

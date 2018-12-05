@@ -1,4 +1,4 @@
-# reins-vue
+# reins
 
 ## Project setup
 ```

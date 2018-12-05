@@ -1,29 +1,48 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <b-link class="navbar-brand" to="/">Minimal</b-link>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <b-link class="nav-link" to="/">Home</b-link>
+          </li>
+          <li class="nav-item">
+            <b-link class="nav-link" to="/products">Products</b-link>
+          </li>
+          <li class="nav-item">
+            <b-link class="nav-link" to="/cart">Cart</b-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+  mounted() {
+    this.getProducts();
+  },
+  methods: {
+    ...mapActions([
+      'getProducts',
+    ]),
+  },
+};
+</script>

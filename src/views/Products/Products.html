@@ -1,0 +1,16 @@
+
+<section class="products container">
+  <h1 class="my-5">Products</h1>
+  <div class="row">
+    <router-link v-for="product in products" :key="product.id" :to="{ name: 'product', params: { id: product.id } }" class="col-md-4 col-sm-6 my-3">
+      <article>
+        <figure class="mb-3">
+          <img :src="product.images[0].src" :alt="product.images[0].alt">
+        </figure>
+        <h3>{{ product.name }}</h3>
+        <span class="h6" v-html="product.price_html"></span>
+      </article>
+    </router-link>
+  </div>
+</section>
+
