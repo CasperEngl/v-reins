@@ -9,9 +9,11 @@
         <h1>{{ product.name }}</h1>
         <span class="h5" v-html="product.price_html"></span>
       </header>
-      <section v-html="product.short_description"></section>
+      <section v-html="product.short_description">
+      </section>
       <footer>
-        <b-btn variant="outline-dark" size="lg">Add to cart</b-btn>
+        <b-form-input v-model="quantity" type="number" placeholder="Quantity"></b-form-input>
+        <b-btn variant="outline-dark" size="lg" @click="clickAddToCart({ product_id: product.id })">Add to cart</b-btn>
       </footer>
     </b-col>
   </b-row>
